@@ -9,7 +9,14 @@ fn main() {
     let matches = Command::new("wthr")
         .about("get your local weather as temp , temp_max and temp_min")
         .version("0.1.0")
-        .arg(Arg::new("ip").short('i').long("ip").required(false).num_args(1)).get_matches();
+        .arg(
+            Arg::new("ip")
+                .short('i')
+                .long("ip")
+                .required(false)
+                .num_args(1),
+        )
+        .get_matches();
     let ip = match matches.get_one::<String>("ip") {
         Some(ip) => ip.to_string(),
         None => get_ip(),

@@ -17,10 +17,10 @@ pub struct Weather {
 
 #[derive(Deserialize)]
 pub struct Main {
-    pub   temp: f64,
+    pub temp: f64,
     feels_like: f64,
-    pub   temp_min: f64,
-    pub   temp_max: f64,
+    pub temp_min: f64,
+    pub temp_max: f64,
     pressure: u32,
     humidity: u32,
     sea_level: u32,
@@ -54,7 +54,7 @@ pub struct Wthr {
     coord: Coord,
     weather: Vec<Weather>,
     base: String,
-    pub  main: Main,
+    pub main: Main,
     visibility: u32,
     wind: Wind,
     clouds: Clouds,
@@ -113,8 +113,8 @@ pub struct Geo {
     district: String,
     city: String,
     zipcode: String,
-  pub  latitude: String,
-  pub  longitude: String,
+    pub latitude: String,
+    pub longitude: String,
     is_eu: bool,
     calling_code: String,
     country_tld: String,

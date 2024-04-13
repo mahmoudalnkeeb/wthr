@@ -1,4 +1,7 @@
-use crate::{helpers::{json_req , text_req}, models::{Wthr , Geo}};
+use crate::{
+    helpers::{json_req, text_req},
+    models::{Geo, Wthr},
+};
 
 const IPIFY_URL: &str = "https://api.ipify.org";
 const IP_GEO_URL: &str = "https://api.ipgeolocation.io/ipgeo";
@@ -14,7 +17,6 @@ const OWTHR_API_KEY: &str = "4faea495b1e5a50fe3c8c32bab9c14f8";
 //     "zh_cn", "zh_tw", "zu",
 // ];
 
-
 pub fn fetch_weather(lat: &str, lon: &str) -> Result<Wthr, ureq::Error> {
     let url = format!(
         "{}?lat={}&lon={}&appid={}&units=metric",
@@ -27,7 +29,6 @@ pub fn get_ip_loc(ip: String) -> Result<Geo, ureq::Error> {
     let url = format!("{}?apiKey={}&ip={}", IP_GEO_URL, IP_GEO_API_KEY, ip);
     json_req(&url)
 }
-
 
 pub fn get_ip() -> String {
     text_req(IPIFY_URL).expect("error happened while checking ip")

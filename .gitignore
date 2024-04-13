@@ -1,0 +1,20 @@
+# Compiled files
+/target/
+
+# Dependency directories
+Cargo.lock
+Cargo.toml.orig
+vendor/
+
+# Generated files
+*.rs.bk
+
+# Environment variables file
+.env
+.env.*
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.swp
+*~

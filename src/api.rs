@@ -2,6 +2,7 @@ use crate::{helpers::{json_req , text_req}, models::{Wthr , Geo}};
 
 const IPIFY_URL: &str = "https://api.ipify.org";
 const IP_GEO_URL: &str = "https://api.ipgeolocation.io/ipgeo";
+// i know it's a bad practice to hardcode the api keys but NVM
 const IP_GEO_API_KEY: &str = "c6c1951f85724116900b669c6ab4b100";
 const OWTHR_URL: &str = "https://api.openweathermap.org/data/2.5/weather";
 // const IP_GEO_ALLOWED_LANGS: [&str; 9] = ["en", "de", "ru", "ja", "fr", "cn", "es", "cs", "it"];

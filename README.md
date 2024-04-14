@@ -68,8 +68,14 @@ OPTIONS:
 
 ## TODOs
 
-1. [ ] Allow users to specify the location by city name or ZIP code for more flexibility.
+1. [ ] Allow users to specify the location by city name or ZIP code.
 
-2. [ ] Enhance the CLI interface with better formatting and error messages for improved user experience.
+2. [ ] Enhance the CLI interface with better formatting and error messages
 
 3. [ ] Implement robust error handling to gracefully handle network failures and API errors.
+
+4. [ ] Response localization.
+
+5. [ ] Show more weather data like humidity , wind , clouds and weather description.
+
+5. [ ] Implement [thermal comfort](https://www.hse.gov.uk/temperature/thermal/).

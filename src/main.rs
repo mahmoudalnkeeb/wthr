@@ -2,7 +2,10 @@ mod api;
 mod helpers;
 mod models;
 
-use crate::api::{fetch_weather, get_ip, get_ip_loc};
+use crate::{
+    api::{fetch_weather, get_ip, get_ip_loc},
+    helpers::print_weather_info,
+};
 use clap::{Arg, Command};
 
 fn main() {
@@ -21,18 +24,15 @@ fn main() {
         Some(ip) => ip.to_string(),
         None => get_ip(),
     };
-    println!("IP Address: {}", ip);
+    // println!("IP Address: {}", ip);
 
-    let ip_loc = get_ip_loc(ip).expect("failed to get IP info");
+    let ip_loc = get_ip_loc(ip).unwrap();
     println!(
         "Latitude: {}, Longitude: {}",
         ip_loc.latitude, ip_loc.longitude
     );
 
-    let wthr = fetch_weather(&ip_loc.latitude, &ip_loc.longitude)
-        .expect("error happened while getting weather");
-    println!(
-        "Temperature: {}, Max Temp: {}, Min Temp: {}",
-        wthr.main.temp, wthr.main.temp_max, wthr.main.temp_min
-    );
+    let wthr = fetch_weather(&ip_loc.latitude, &ip_loc.longitude).unwrap();
+
+    print_weather_info(wthr)
 }

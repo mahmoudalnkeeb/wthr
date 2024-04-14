@@ -10,8 +10,8 @@ pub struct Coord {
 #[derive(Deserialize)]
 pub struct Weather {
     id: u32,
-    main: String,
-    description: String,
+    pub main: String,
+    pub description: String,
     icon: String,
 }
 
@@ -22,14 +22,14 @@ pub struct Main {
     pub temp_min: f64,
     pub temp_max: f64,
     pressure: u32,
-    humidity: u32,
+    pub humidity: u32,
     sea_level: u32,
     grnd_level: u32,
 }
 
 #[derive(Deserialize)]
 pub struct Wind {
-    speed: f64,
+    pub speed: f64,
     deg: u32,
     gust: f64,
 }
@@ -52,11 +52,11 @@ pub struct Sys {
 #[derive(Deserialize)]
 pub struct Wthr {
     coord: Coord,
-    weather: Vec<Weather>,
+    pub weather: Vec<Weather>,
     base: String,
     pub main: Main,
-    visibility: u32,
-    wind: Wind,
+    pub visibility: u32,
+    pub wind: Wind,
     clouds: Clouds,
     dt: u32,
     sys: Sys,
